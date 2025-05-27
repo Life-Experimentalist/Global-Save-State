@@ -22,6 +22,23 @@
 		"email": "krishnagsvv@gmail.com",
 		"web": "https://github.com/Life-Experimentalist/global-save-state"
 	},
+    "qna": "marketplace",
+    "galleryBanner": {
+        "color": "#1e1e1e",
+        "theme": "dark"
+    },
+    "badges": [
+        {
+            "url": "https://img.shields.io/visual-studio-marketplace/v/VKrishna04.global-save-state",
+            "href": "https://marketplace.visualstudio.com/items?itemName=VKrishna04.global-save-state",
+            "description": "Version"
+        },
+        {
+            "url": "https://img.shields.io/visual-studio-marketplace/d/VKrishna04.global-save-state",
+            "href": "https://marketplace.visualstudio.com/items?itemName=VKrishna04.global-save-state",
+            "description": "Downloads"
+        }
+    ],
 	"engines": {
 		"vscode": "^1.74.0",
 		"node": ">=16.0.0"
