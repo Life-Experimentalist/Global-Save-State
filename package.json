@@ -1,0 +1,133 @@
+{
+	"name": "global-save-state",
+	"displayName": "Global Save State",
+	"description": "Create global save states for your project using VS Code timeline feature",
+	"version": "1.0.2",
+	"icon": "icon.jpg",
+	"publisher": "VKrishna04",
+	"license": "Apache-2.0",
+	"keywords": [
+		"vscode",
+		"extension",
+		"global",
+		"save",
+		"state",
+		"timeline",
+		"project",
+		"development"
+	],
+	"homepage": "https://github.com/Life-Experimentalist/global-save-state",
+	"bugs": {
+		"url": "https://github.com/Life-Experimentalist/global-save-state/issues",
+		"email": "krishnagsvv@gmail.com",
+		"web": "https://github.com/Life-Experimentalist/global-save-state"
+	},
+	"engines": {
+		"vscode": "^1.74.0",
+		"node": ">=16.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./out/extension.js",
+	"activationEvents": [
+		"onCommand:globalSaveState.createSavePoint",
+		"onCommand:globalSaveState.restoreSavePoint"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "globalSaveState.createSavePoint",
+				"title": "Create Save Point",
+				"category": "Global Save State"
+			},
+			{
+				"command": "globalSaveState.restoreSavePoint",
+				"title": "Restore Save Point",
+				"category": "Global Save State"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "globalSaveState.createSavePoint",
+				"key": "ctrl+shift+s",
+				"mac": "cmd+shift+s"
+			},
+			{
+				"command": "globalSaveState.restoreSavePoint",
+				"key": "ctrl+alt+r",
+				"mac": "cmd+alt+r"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "globalSaveState.createSavePoint"
+				},
+				{
+					"command": "globalSaveState.restoreSavePoint"
+				}
+			]
+		},
+		"configuration": {
+			"title": "Global Save State",
+			"properties": {
+				"globalSaveState.excludePatterns": {
+					"type": "array",
+					"default": [
+						"**/node_modules/**",
+						"**/.git/**",
+						"**/dist/**",
+						"**/build/**",
+						"**/.vscode/**",
+						"**/out/**"
+					],
+					"description": "Patterns to exclude from save state creation"
+				},
+				"globalSaveState.maxSavePoints": {
+					"type": "number",
+					"default": 50,
+					"description": "Maximum number of save points to keep"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"compile-tests": "tsc -p . --outDir out --sourceMap true",
+		"watch-tests": "tsc -p . -w --outDir out --sourceMap true",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "mocha --require ts-node/register src/test/**/*.test.ts",
+		"build": "node .vscode/build.js",
+		"publish": "npm run build && npx vsce publish"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Life-Experimentalist/global-save-state"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.27.0",
+		"@types/glob": "^8.1.0",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.74.0",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"eslint": "^8.57.1",
+		"globals": "^16.2.0",
+		"mocha": "^11.5.0",
+		"ts-loader": "^9.5.2",
+		"typescript": "^4.9.4",
+		"typescript-eslint": "^8.32.1",
+		"@vscode/test-electron": "^1.6.1",
+		"webpack": "^5.99.9",
+		"webpack-cli": "^6.0.1"
+	},
+	"dependencies": {
+		"glob": "^8.0.3"
+	}
+}

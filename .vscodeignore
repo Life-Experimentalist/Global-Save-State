@@ -1,0 +1,43 @@
+# Source code and development files
+src/**
+.vscode/**
+.git/**
+.gitignore
+.gitattributes
+.github/**
+
+# Build and development tools
+node_modules/**
+*.vsix
+.eslintrc.json
+tsconfig.json
+webpack.config.js
+build.js
+
+# Documentation and website files
+docs/**
+index.html
+styles.css
+
+# Test and temporary files
+test/**
+.vscode-test/**
+out/test/**
+test-file.md
+
+# Development and project management files
+PUBLISHING_CHECKLIST.md
+READY_TO_PUBLISH.md
+FINAL_RELEASE_SUMMARY.md
+
+# Development documentation
+TODO.md
+ROADMAP.md
+ARCHITECTURE.md
+README_INTRO.md
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+.vscode/globalSaveState.json
