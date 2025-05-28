@@ -19,7 +19,7 @@
 
 ## 🎯 Why Save Points for Code?
 
-Remember playing **Zelda** and hitting that checkpoint right before Ganondorf? Or **Dark Souls** where you desperately needed that bonfire before the boss? **Global Save State** brings that same peace of mind to coding!
+Remember playing **Zelda** and hitting that checkpoint right before `Ganondorf`? Or **`Dark Souls`** where you desperately needed that bonfire before the boss? **`Global Save State`** brings that same peace of mind to coding!
 
 ### 🎮 Perfect Gaming Scenarios:
 

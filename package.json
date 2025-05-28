@@ -2,19 +2,33 @@
 	"name": "global-save-state",
 	"displayName": "Global Save State",
 	"description": "Create global save states for your project using VS Code timeline feature",
-	"version": "1.0.2",
+    "version": "1.0.3",
 	"icon": "icon.jpg",
 	"publisher": "VKrishna04",
-	"license": "Apache-2.0",
-	"keywords": [
+    "license": "Apache-2.0",
+    "keywords": [
 		"vscode",
+        "vscode-extension",
+        "visual-studio-code",
 		"extension",
 		"global",
 		"save",
 		"state",
+        "savepoint",
+        "checkpoint",
 		"timeline",
 		"project",
-		"development"
+        "development",
+        "backup",
+        "restore",
+        "snapshot",
+        "productivity",
+        "workflow",
+        "code-management",
+        "version-control",
+        "developer-tools",
+        "typescript",
+        "webpack"
 	],
 	"homepage": "https://github.com/Life-Experimentalist/global-save-state",
 	"bugs": {
@@ -37,7 +51,7 @@
             "url": "https://img.shields.io/visual-studio-marketplace/d/VKrishna04.global-save-state",
             "href": "https://marketplace.visualstudio.com/items?itemName=VKrishna04.global-save-state",
             "description": "Downloads"
-        }
+        },
     ],
 	"engines": {
 		"vscode": "^1.74.0",

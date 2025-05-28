@@ -166,7 +166,7 @@ async function createSavePoint(context: vscode.ExtensionContext) {
     }
   } catch {}
   vscode.window.showInformationMessage(
-    `Save point '${name}' created for folder '${folder.name}'${
+    `💾 Save point: "${name}" created for folder '${folder.name}'${
       isIdentical ? " (no changes detected, empty save point)" : ""
     }.`
   );
@@ -233,7 +233,7 @@ async function restoreSavePoint(context: vscode.ExtensionContext) {
     }
   }
   vscode.window.showInformationMessage(
-    `Restored save point '${savePoint.name}' for folder '${folder.name}'.`
+    `Restored save point "${savePoint.name}" for folder '${folder.name}'.`
   );
 }
 

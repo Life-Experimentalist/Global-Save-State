@@ -4,6 +4,18 @@ All notable changes to the "Global Save State" extension will be documented in t
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.0.3] - 2025-05-27
+
+### Added
+- Enhanced marketplace presentation with version and download badges
+- Improved changelog formatting and structure for better VS Code integration
+- Professional gallery banner configuration for dark theme compatibility
+
+### Changed
+- Optimized changelog format to follow VS Code extension conventions
+- Enhanced package.json metadata for better marketplace discovery
+- Improved extension documentation and user experience
+
 ## [1.0.2] - 2025-05-27
 
 ### Changed
@@ -35,6 +47,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 gantt
     dateFormat  YYYY-MM-DD
     title Release Timeline
+    section v1.0.3
+    Marketplace Enhancement :done, 2025-05-27,2025-05-27
     section v1.0.2
     Optimization Release :done, 2025-05-27,2025-05-27
     section v1.0.1
