@@ -1,5 +1,5 @@
 // build.js
-// Enhanced build script for Global Save State VS Code Extension
+// Enhanced build script for Save Sync VS Code Extension
 // Provides better user interaction and optimized publishing workflow
 
 const { execSync } = require("child_process");

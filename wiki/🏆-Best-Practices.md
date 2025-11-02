@@ -1,6 +1,6 @@
 # 🏆 Best Practices
 
-Master the art of save point management! These battle-tested strategies will make you a Global Save State pro.
+Master the art of save point management! These battle-tested strategies will make you a Save Sync pro.
 
 ## 🎮 Gaming Mindset
 

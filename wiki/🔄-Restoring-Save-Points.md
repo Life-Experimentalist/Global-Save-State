@@ -18,7 +18,7 @@ Time to learn the second most important gaming skill: **loading your save**! Whe
 
 ### **Step 2: Choose Your Save**
 ```
-┌─ Global Save State ─────────────────────────┐
+┌─ Save Sync ─────────────────────────┐
 │ Select a save point to restore:             │
 │                                             │
 │ 🎮 Before Boss Fight        [2 min ago]    │
@@ -45,7 +45,7 @@ Your entire project returns to that exact state!
 
 ### **Alternative Restore Process**
 1. **Press `Ctrl+Shift+P`** (Command Palette)
-2. **Type**: `"Global Save State: Restore Save Point"`
+2. **Type**: `"Save Sync: Restore Save Point"`
 3. **Select from dropdown**
 4. **Confirm restoration**
 

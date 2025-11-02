@@ -1,4 +1,4 @@
-# 🎮 Global Save State
+# 🎮 Save Sync
 
 ## 🚀 Getting Started
 - [🏠 Home](Home)
@@ -27,9 +27,9 @@
 ---
 
 ## 🔗 Quick Links
-- [🐛 Report Bug](https://github.com/Life-Experimentalist/Global-Save-State/issues)
-- [💡 Feature Request](https://github.com/Life-Experimentalist/Global-Save-State/issues)
-- [💬 Discussions](https://github.com/Life-Experimentalist/Global-Save-State/discussions)
+- [🐛 Report Bug](https://github.com/Life-Experimentalist/save-sync/issues)
+- [💡 Feature Request](https://github.com/Life-Experimentalist/save-sync/issues)
+- [💬 Discussions](https://github.com/Life-Experimentalist/save-sync/discussions)
 
 ---
 

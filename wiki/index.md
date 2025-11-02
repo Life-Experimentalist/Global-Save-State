@@ -1,10 +1,10 @@
-# 🎮 Global Save State
+# 🎮 Save Sync
 
 Create gaming-style save points in VS Code! Save your progress before trying risky experiments, just like in video games.
 
 ## 🚀 Quick Start
 
-1. **Install**: Search "Global Save State" in VS Code Extensions
+1. **Install**: Search "Save Sync" in VS Code Extensions
 2. **Create Save**: `Ctrl+Shift+S` → Enter name → Done!
 3. **Restore Save**: `Ctrl+Alt+R` → Select save point → Restored!
 
@@ -28,6 +28,6 @@ Think of it like video game save points:
 
 ---
 
-**🐛 Found a bug?** [Report it here](https://github.com/Life-Experimentalist/Global-Save-State/issues)
+**🐛 Found a bug?** [Report it here](https://github.com/Life-Experimentalist/save-sync/issues)
 
-**💡 Have an idea?** [Suggest it here](https://github.com/Life-Experimentalist/Global-Save-State/issues)
+**💡 Have an idea?** [Suggest it here](https://github.com/Life-Experimentalist/save-sync/issues)

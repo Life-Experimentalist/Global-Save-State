@@ -1,4 +1,4 @@
-# Contributing to Global Save State VS Code Extension
+# Contributing to Save Sync VS Code Extension
 
 Thank you for considering contributing! Please follow these guidelines:
 

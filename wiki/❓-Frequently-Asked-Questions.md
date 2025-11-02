@@ -1,23 +1,23 @@
 # ❓ Frequently Asked Questions
 
-Got questions? We've got answers! Here are the most common questions about Global Save State.
+Got questions? We've got answers! Here are the most common questions about Save Sync.
 
 ## 🎮 General Questions
 
-### **Q: What exactly is Global Save State?**
+### **Q: What exactly is Save Sync?**
 **A:** It's like the save/load system in video games, but for your VS Code projects! Create checkpoints in your code that you can return to anytime, perfect for experimenting safely.
 
 ### **Q: How is this different from Git?**
 **A:** Think of it this way:
 - **Git** = Professional version control for teams and long-term projects
-- **Global Save State** = Quick gaming-style checkpoints for experiments and learning
+- **Save Sync** = Quick gaming-style checkpoints for experiments and learning
 
-Git is like a detailed journal, Global Save State is like quicksave in a game!
+Git is like a detailed journal, Save Sync is like quicksave in a game!
 
 ### **Q: Can I use this alongside Git?**
 **A:** Absolutely! They complement each other perfectly:
 - Use **Git** for official commits and collaboration
-- Use **Global Save State** for quick experiments between commits
+- Use **Save Sync** for quick experiments between commits
 
 ### **Q: Is my data safe?**
 **A:** Yes! Save points are stored locally in your project's `.vscode/globalSaveStates.json` file. Your data never leaves your machine.
@@ -158,10 +158,10 @@ Git is like a detailed journal, Global Save State is like quicksave in a game!
 - Export/import functionality
 
 ### **Q: Can I request features?**
-**A:** Absolutely! Use our [GitHub Issues](https://github.com/Life-Experimentalist/Global-Save-State/issues) to suggest features.
+**A:** Absolutely! Use our [GitHub Issues](https://github.com/Life-Experimentalist/save-sync/issues) to suggest features.
 
 ### **Q: How can I contribute?**
-**A:** We welcome code, documentation, and feedback! Check out our [GitHub repository](https://github.com/Life-Experimentalist/Global-Save-State) to get started.
+**A:** We welcome code, documentation, and feedback! Check out our [GitHub repository](https://github.com/Life-Experimentalist/save-sync) to get started.
 
 ## 💡 Pro Tips
 
@@ -185,8 +185,8 @@ Git is like a detailed journal, Global Save State is like quicksave in a game!
 ## 🆘 Still Need Help?
 
 **Can't find your answer?**
-- 💬 [Ask in Discussions](https://github.com/Life-Experimentalist/Global-Save-State/discussions)
-- 🐛 [Report Issues](https://github.com/Life-Experimentalist/Global-Save-State/issues)
+- 💬 [Ask in Discussions](https://github.com/Life-Experimentalist/save-sync/discussions)
+- 🐛 [Report Issues](https://github.com/Life-Experimentalist/save-sync/issues)
 - 📧 Email: krishnagsvv@gmail.com
 
 ---
