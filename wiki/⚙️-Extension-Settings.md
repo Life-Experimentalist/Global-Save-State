@@ -1,12 +1,12 @@
 # ⚙️ Extension Settings
 
-Customize Global Save State to perfectly fit your gaming-style workflow! Like any good game, you can adjust the settings to match your playstyle.
+Customize Save Sync to perfectly fit your gaming-style workflow! Like any good game, you can adjust the settings to match your playstyle.
 
 ## 🎮 Quick Settings Access
 
 ### **VS Code Settings**
 1. **Open Settings**: `Ctrl+,` (or `Cmd+,` on Mac)
-2. **Search**: `"Global Save State"`
+2. **Search**: `"Save Sync"`
 3. **Configure**: Adjust settings to your liking
 
 ### **Settings JSON**

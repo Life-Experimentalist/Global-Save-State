@@ -1,13 +1,13 @@
 # 🎯 Quick Start Tutorial
 
-Get up and running with Global Save State in just 5 minutes! This lightning-fast tutorial will have you saving and loading like a gaming pro.
+Get up and running with Save Sync in just 5 minutes! This lightning-fast tutorial will have you saving and loading like a gaming pro.
 
 ## ⚡ 5-Minute Setup
 
 ### **Step 1: Install (30 seconds)**
 1. Open VS Code
 2. Press `Ctrl+Shift+X` (Extensions)
-3. Search: `"Global Save State"`
+3. Search: `"Save Sync"`
 4. Click **Install** on VKrishna04's extension
 5. ✅ **Done!**
 
@@ -189,7 +189,7 @@ Try these progressively harder challenges:
 
 ## 🚀 Next Steps
 
-🎉 **You're now a Global Save State player!**
+🎉 **You're now a Save Sync player!**
 
 **Ready to level up?**
 - 🎮 [Learn Best Practices](Best-Practices) - Pro strategies
@@ -200,8 +200,8 @@ Try these progressively harder challenges:
 ## ❓ Quick Help
 
 ### **Not Working?**
-- Check Extensions view - is Global Save State enabled?
-- Try Command Palette: `Ctrl+Shift+P` → "Global Save State"
+- Check Extensions view - is Save Sync enabled?
+- Try Command Palette: `Ctrl+Shift+P` → "Save Sync"
 - See [Troubleshooting](Troubleshooting) for detailed help
 
 ### **Want More?**

@@ -1,8 +1,8 @@
 {
-	"name": "global-save-state",
-	"displayName": "Global Save State",
-	"description": "Create global save states for your project using VS Code timeline feature",
-    "version": "1.0.3",
+	"name": "save-sync",
+	"displayName": "Save Sync",
+	"description": "Create and manage lightweight save points (snapshots) for your VS Code workspace.",
+    "version": "0.0.0",
 	"icon": "icon.jpg",
 	"publisher": "VKrishna04",
     "license": "Apache-2.0",
@@ -30,11 +30,11 @@
         "typescript",
         "webpack"
 	],
-	"homepage": "https://github.com/Life-Experimentalist/global-save-state",
+	"homepage": "https://github.com/Life-Experimentalist/save-sync",
 	"bugs": {
-		"url": "https://github.com/Life-Experimentalist/global-save-state/issues",
+		"url": "https://github.com/Life-Experimentalist/save-sync/issues",
 		"email": "krishnagsvv@gmail.com",
-		"web": "https://github.com/Life-Experimentalist/global-save-state"
+		"web": "https://github.com/Life-Experimentalist/save-sync"
 	},
     "qna": "marketplace",
     "galleryBanner": {
@@ -54,8 +54,7 @@
         },
     ],
 	"engines": {
-		"vscode": "^1.74.0",
-		"node": ">=16.0.0"
+		"vscode": "^1.60.0"
 	},
 	"categories": [
 		"Other"
@@ -70,12 +69,12 @@
 			{
 				"command": "globalSaveState.createSavePoint",
 				"title": "Create Save Point",
-				"category": "Global Save State"
+				"category": "Save Sync"
 			},
 			{
 				"command": "globalSaveState.restoreSavePoint",
 				"title": "Restore Save Point",
-				"category": "Global Save State"
+				"category": "Save Sync"
 			}
 		],
 		"keybindings": [
@@ -101,7 +100,7 @@
 			]
 		},
 		"configuration": {
-			"title": "Global Save State",
+			"title": "Save Sync",
 			"properties": {
 				"globalSaveState.excludePatterns": {
 					"type": "array",
@@ -138,7 +137,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Life-Experimentalist/global-save-state"
+		"url": "https://github.com/Life-Experimentalist/save-sync.git"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.27.0",

@@ -30,13 +30,13 @@ Press shortcut → Enter name → Press Enter → Done!
 
 ### **Method 2: Command Palette**
 1. **Press `Ctrl+Shift+P`** (or `Cmd+Shift+P` on Mac)
-2. **Type**: `"Global Save State: Create Save Point"`
+2. **Type**: `"Save Sync: Create Save Point"`
 3. **Press Enter**
 4. **Enter save point name**
 5. **Press Enter to confirm**
 
 ### **Method 3: VS Code Menu** (if available)
-- Look for Global Save State in VS Code menus
+- Look for Save Sync in VS Code menus
 - Click "Create Save Point"
 
 ## 🎯 Perfect Save Point Timing

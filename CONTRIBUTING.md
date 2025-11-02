@@ -1,11 +1,11 @@
-# Contributing to Global Save State
+# Contributing to Save Sync
 
-🎮 Welcome to the Global Save State project! We're excited that you want to contribute to making VS Code feel more like your favorite video game!
+🎮 Welcome to the Save Sync project! We're excited that you want to contribute to making VS Code feel more like your favorite video game!
 
 ## 🚀 Quick Start
 
 1. **🍴 Fork** the repository
-2. **📥 Clone** your fork: `git clone https://github.com/YOUR_USERNAME/global-save-state.git`
+2. **📥 Clone** your fork: `git clone https://github.com/YOUR_USERNAME/save-sync.git`
 3. **📦 Install** dependencies: `npm install`
 4. **🔧 Build** the extension: `npm run compile`
 5. **🧪 Test** your changes: `npm test`
@@ -21,8 +21,8 @@
 ### Local Development
 ```bash
 # Clone and setup
-git clone https://github.com/Life-Experimentalist/global-save-state.git
-cd global-save-state
+git clone https://github.com/Life-Experimentalist/save-sync.git
+cd save-sync
 npm install
 
 # Build and watch for changes
@@ -209,7 +209,7 @@ Contributors will be:
 
 ## ❓ Questions?
 
-- **💬 Discussions**: [GitHub Discussions](https://github.com/Life-Experimentalist/global-save-state/discussions)
+- **💬 Discussions**: [GitHub Discussions](https://github.com/Life-Experimentalist/save-sync/discussions)
 - **📧 Email**: krishnagsvv@gmail.com
 - **🐛 Issues**: Use our detailed issue templates
 - **💡 Ideas**: Start with a feature request issue
