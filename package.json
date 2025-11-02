@@ -51,7 +51,7 @@
             "url": "https://img.shields.io/visual-studio-marketplace/d/VKrishna04.global-save-state",
             "href": "https://marketplace.visualstudio.com/items?itemName=VKrishna04.global-save-state",
             "description": "Downloads"
-        },
+        }
     ],
 	"engines": {
 		"vscode": "^1.60.0"
