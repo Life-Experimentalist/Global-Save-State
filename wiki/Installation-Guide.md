@@ -13,12 +13,12 @@ Welcome to Save Sync! Get your gaming-style save points set up in VS Code in jus
 
 ### **Method 2: Command Line**
 ```bash
-code --install-extension VKrishna04.save-sync
+code --install-extension VKrishna04.global-save-state
 ```
 
 ### **Method 3: Extensions View**
 1. Open **View** → **Extensions**
-2. Search: `VKrishna04.save-sync`
+2. Search: `VKrishna04.global-save-state`
 3. Click **Install**
 
 ## ⚙️ Initial Setup
@@ -77,7 +77,7 @@ Go to **File** → **Preferences** → **Settings** and search for "Save Sync":
 ## ❓ Installation Troubleshooting
 
 ### **Extension Not Found**
-- Check you're searching for: `"Save Sync"` or `VKrishna04.save-sync`
+- Check you're searching for: `"Save Sync"` or `VKrishna04.global-save-state`
 - Ensure you have internet connection
 - Try restarting VS Code
 
