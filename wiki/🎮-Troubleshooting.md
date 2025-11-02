@@ -7,8 +7,8 @@ Having issues? Here are quick fixes for common problems:
 **Problem**: Nothing happens when pressing `Ctrl+Shift+S`
 
 **Solutions**:
-- Check Extensions view - ensure Global Save State is enabled
-- Try Command Palette: `Ctrl+Shift+P` → "Global Save State: Create Save Point"
+- Check Extensions view - ensure Save Sync is enabled
+- Try Command Palette: `Ctrl+Shift+P` → "Save Sync: Create Save Point"
 - Verify you have write permissions to project folder
 - Restart VS Code
 
@@ -43,5 +43,5 @@ Having issues? Here are quick fixes for common problems:
 
 ## 🆘 Still Need Help?
 
-- **🐛 Report bugs**: [GitHub Issues](https://github.com/Life-Experimentalist/Global-Save-State/issues)
-- **💬 Ask questions**: [GitHub Discussions](https://github.com/Life-Experimentalist/Global-Save-State/discussions)
+- **🐛 Report bugs**: [GitHub Issues](https://github.com/Life-Experimentalist/save-sync/issues)
+- **💬 Ask questions**: [GitHub Discussions](https://github.com/Life-Experimentalist/save-sync/discussions)

@@ -52,9 +52,9 @@ assignees: []
 ## 📖 Documentation Checked
 **Have you checked these resources?**
 
-- [ ] [README.md](https://github.com/Life-Experimentalist/global-save-state/blob/main/README.md)
+- [ ] [README.md](https://github.com/Life-Experimentalist/save-sync/blob/main/README.md)
 - [ ] [VS Code Marketplace Page](https://marketplace.visualstudio.com/items?itemName=VKrishna04.global-save-state)
-- [ ] [Project Website](https://life-experimentalist.github.io/global-save-state/)
+- [ ] [Project Website](https://life-experimentalist.github.io/save-sync/)
 - [ ] Existing GitHub Issues
 - [ ] Extension Settings in VS Code
 

@@ -1,13 +1,13 @@
 # 📦 Installation Guide
 
-Welcome to Global Save State! Get your gaming-style save points set up in VS Code in just a few minutes.
+Welcome to Save Sync! Get your gaming-style save points set up in VS Code in just a few minutes.
 
 ## 🎯 Quick Install (Recommended)
 
 ### **Method 1: VS Code Marketplace**
 1. **Open VS Code**
 2. **Press `Ctrl+Shift+X`** (or `Cmd+Shift+X` on Mac) to open Extensions
-3. **Search for**: `"Global Save State"`
+3. **Search for**: `"Save Sync"`
 4. **Click Install** on the extension by **VKrishna04**
 5. **Ready to go!** 🎮
 
@@ -35,7 +35,7 @@ After installation, you should see:
 4. **Success!** You should see a confirmation message
 
 ### **3. Configure Settings (Optional)**
-Go to **File** → **Preferences** → **Settings** and search for "Global Save State":
+Go to **File** → **Preferences** → **Settings** and search for "Save Sync":
 
 ```json
 {
@@ -77,7 +77,7 @@ Go to **File** → **Preferences** → **Settings** and search for "Global Save 
 ## ❓ Installation Troubleshooting
 
 ### **Extension Not Found**
-- Check you're searching for: `"Global Save State"` or `VKrishna04.global-save-state`
+- Check you're searching for: `"Save Sync"` or `VKrishna04.global-save-state`
 - Ensure you have internet connection
 - Try restarting VS Code
 

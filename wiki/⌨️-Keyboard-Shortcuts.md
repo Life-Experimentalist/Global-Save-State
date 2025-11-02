@@ -63,8 +63,8 @@ If keyboard shortcuts conflict or don't work:
 
 1. **Press `Ctrl+Shift+P`** (Command Palette)
 2. **Type commands**:
-   - `"Global Save State: Create Save Point"`
-   - `"Global Save State: Restore Save Point"`
+   - `"Save Sync: Create Save Point"`
+   - `"Save Sync: Restore Save Point"`
 
 ## 🚀 Advanced Shortcut Tips
 

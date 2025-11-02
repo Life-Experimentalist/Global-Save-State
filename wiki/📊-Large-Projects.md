@@ -1,6 +1,6 @@
 # 📊 Large Projects
 
-Working with massive codebases? Learn how to use Global Save State efficiently with thousands of files while maintaining speed and sanity!
+Working with massive codebases? Learn how to use Save Sync efficiently with thousands of files while maintaining speed and sanity!
 
 ## 🎮 Large Project Challenges
 
@@ -375,7 +375,7 @@ rm -f .vscode/globalSaveStates.json
 ### **Documentation**
 Document your exclusion strategy:
 ```markdown
-# Global Save State Configuration
+# Save Sync Configuration
 
 ## Exclusions
 - All build artifacts (dist/, build/, target/)
