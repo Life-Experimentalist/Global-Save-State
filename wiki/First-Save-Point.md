@@ -1,6 +1,6 @@
 # 🎮 Creating Your First Save Point
 
-Welcome, player! Time to learn the most important skill in any game: **saving your progress**. In Global Save State, this means creating checkpoints in your code journey.
+Welcome, player! Time to learn the most important skill in any game: **saving your progress**. In Save-Sync, this means creating checkpoints in your code journey.
 
 ## 🎯 What is a Save Point?
 
@@ -46,7 +46,7 @@ function calculateTotal(items) {
 
 ### **Alternative Way to Save**
 1. **Press `Ctrl+Shift+P`** (Command Palette)
-2. **Type**: `"Global Save State: Create Save Point"`
+2. **Type**: `"Save-Sync: Create Save Point"`
 3. **Press Enter**
 4. **Name your save point**
 5. **Done!**
@@ -114,7 +114,7 @@ Think like you're playing an RPG:
 ## 🔧 Customizing Your First Save
 
 ### **Exclude Additional Files**
-Go to VS Code Settings → Search "Global Save State":
+Go to VS Code Settings → Search "Save-Sync":
 ```json
 {
     "globalSaveState.excludePatterns": [
@@ -140,7 +140,7 @@ You'll know your save point worked when you see:
 - ✅ **Command palette** shows restore options
 
 ### **File System Check**
-- ✅ `.vscode/globalSaveStates.json` file exists in your project
+- ✅ `.vscode/globalSaveState.json` file exists in your project
 - ✅ File contains your save point data
 
 ## 🚨 Troubleshooting First Save

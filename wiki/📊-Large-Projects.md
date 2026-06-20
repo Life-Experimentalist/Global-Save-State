@@ -1,6 +1,6 @@
 # 📊 Large Projects
 
-Working with massive codebases? Learn how to use Global Save State efficiently with thousands of files while maintaining speed and sanity!
+Working with massive codebases? Learn how to use Save-Sync efficiently with thousands of files while maintaining speed and sanity!
 
 ## 🎮 Large Project Challenges
 
@@ -227,15 +227,15 @@ Each service gets its own save points:
 ```
 user-service/
 ├── .vscode/
-│   └── globalSaveStates.json    ← Independent saves
+│   └── globalSaveState.json    ← Independent saves
 
 payment-service/
 ├── .vscode/
-│   └── globalSaveStates.json    ← Independent saves
+│   └── globalSaveState.json    ← Independent saves
 
 notification-service/
 ├── .vscode/
-│   └── globalSaveStates.json    ← Independent saves
+│   └── globalSaveState.json    ← Independent saves
 ```
 
 ### **Feature Branch Workflow**
@@ -316,7 +316,7 @@ Check: Task Manager/Activity Monitor
 time code --command globalSaveState.createSavePoint
 
 # Check save file size
-ls -lh .vscode/globalSaveStates.json
+ls -lh .vscode/globalSaveState.json
 
 # Monitor VS Code memory
 # Windows: Task Manager → Details → Code.exe
@@ -356,7 +356,7 @@ ls -lh .vscode/globalSaveStates.json
 ### **Team Guidelines**
 ```
 ✅ Each developer uses saves for personal experiments
-✅ Don't commit .vscode/globalSaveStates.json to Git
+✅ Don't commit .vscode/globalSaveState.json to Git
 ✅ Use consistent exclusion patterns across team
 ✅ Share workspace settings for optimal performance
 ❌ Don't rely on saves for team collaboration
@@ -366,16 +366,16 @@ ls -lh .vscode/globalSaveStates.json
 ### **CI/CD Integration**
 ```bash
 # Exclude save states from builds
-echo ".vscode/globalSaveStates.json" >> .gitignore
+echo ".vscode/globalSaveState.json" >> .gitignore
 
 # Clean saves in CI environment
-rm -f .vscode/globalSaveStates.json
+rm -f .vscode/globalSaveState.json
 ```
 
 ### **Documentation**
 Document your exclusion strategy:
 ```markdown
-# Global Save State Configuration
+# Save-Sync Configuration
 
 ## Exclusions
 - All build artifacts (dist/, build/, target/)

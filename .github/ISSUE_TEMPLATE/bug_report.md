@@ -44,7 +44,7 @@ assignees: ['Life-Experimentalist']
 
 ### Extension Settings
 ```json
-// Your Global Save State extension settings from settings.json
+// Your Save-Sync extension settings from settings.json
 {
   "globalSaveState.excludePatterns": [],
   "globalSaveState.maxSavePoints": 50
@@ -61,7 +61,7 @@ assignees: ['Life-Experimentalist']
 
 ### Extension Output
 ```
-[Paste extension output here - View > Output > Select "Global Save State"]
+[Paste extension output here - View > Output > Select "Save-Sync"]
 ```
 
 ### File System Errors
@@ -81,7 +81,7 @@ assignees: ['Life-Experimentalist']
 **Please help us debug by providing:**
 
 ### Save Point File Location
-- **Path**: `[where .vscode/globalSaveStates.json is located]`
+- **Path**: `[where .vscode/globalSaveState.json is located]`
 - **File Size**: `[size of the save states file]`
 - **Permissions**: `[can you read/write to this location?]`
 

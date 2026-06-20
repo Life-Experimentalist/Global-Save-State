@@ -61,7 +61,7 @@ project/
 ```
 
 ## ⚙️ Extension Configuration
-**Your Global Save State settings:**
+**Your Save-Sync settings:**
 
 ```json
 {

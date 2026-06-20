@@ -1,5 +1,5 @@
 // build.js
-// Enhanced build script for Global Save State VS Code Extension
+// Enhanced build script for Save-Sync VS Code Extension
 // Provides better user interaction and optimized publishing workflow
 
 const { execSync } = require("child_process");
@@ -129,7 +129,7 @@ function main() {
 
     const destVsix = path.join(
         releasesDir,
-        `GlobalSaveState_v${info.version}.vsix`
+        `SaveSync_v${info.version}.vsix`
     );
 
     if (fs.existsSync(srcVsix)) {
@@ -158,13 +158,13 @@ function main() {
     log(`${"=".repeat(60)}`, colors.bright);
     log(`📦 Extension: ${info.displayName} v${info.version}`, colors.blue);
     log(
-        `📁 Location: releases/GlobalSaveState_v${info.version}.vsix`,
+        `📁 Location: releases/SaveSync_v${info.version}.vsix`,
         colors.blue
     );
     log(`🚀 Ready for VS Code Marketplace!`, colors.green);
     log(`\n💡 To publish: npx vsce publish`, colors.cyan);
     log(
-        `💡 To install locally: code --install-extension releases/GlobalSaveState_v${info.version}.vsix`,
+        `💡 To install locally: code --install-extension releases/SaveSync_v${info.version}.vsix`,
         colors.cyan
     );
     log(`${"=".repeat(60)}\n`, colors.bright);

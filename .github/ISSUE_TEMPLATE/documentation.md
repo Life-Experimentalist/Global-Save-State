@@ -24,7 +24,7 @@ assignees: ['Life-Experimentalist']
 
 - [ ] **README.md** - Main repository README
 - [ ] **Extension Marketplace Page** - VS Code Marketplace description
-- [ ] **Website** - life-experimentalist.github.io/global-save-state
+- [ ] **Website** - save-sync.vkrishna04.me
 - [ ] **Code Comments** - Inline documentation in source code
 - [ ] **CHANGELOG.md** - Version history documentation
 - [ ] **Architecture Docs** - Technical documentation

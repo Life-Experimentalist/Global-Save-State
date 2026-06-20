@@ -1,6 +1,6 @@
 # 🏆 Best Practices
 
-Master the art of save point management! These battle-tested strategies will make you a Global Save State pro.
+Master the art of save point management! These battle-tested strategies will make you a Save-Sync pro.
 
 ## 🎮 Gaming Mindset
 
@@ -173,7 +173,7 @@ Keep recent saves → Delete old saves when at limit → Focus on key milestones
 ✅ Use for individual experiments
 ✅ Save before applying teammate suggestions
 ✅ Create checkpoints when learning team codebase
-❌ Don't commit .vscode/globalSaveStates.json to Git
+❌ Don't commit .vscode/globalSaveState.json to Git
 ❌ Don't rely on saves instead of proper Git workflow
 ```
 
@@ -196,7 +196,7 @@ Keep recent saves → Delete old saves when at limit → Focus on key milestones
 ### **Backup Important Saves**
 ```bash
 # Copy important save states
-cp .vscode/globalSaveStates.json ../backup-saves.json
+cp .vscode/globalSaveState.json ../backup-saves.json
 ```
 
 ### **Performance Monitoring**
