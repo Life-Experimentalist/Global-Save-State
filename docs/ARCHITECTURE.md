@@ -1,7 +1,7 @@
 # Architecture
 
 ## Overview
-This extension provides a global save state system for VS Code workspaces, allowing users to create and restore project-wide save points using a simple UI. It is not a version control system, but a rollback mechanism for all files, respecting user-defined exclusions.
+This extension provides a save point system for VS Code workspaces, allowing users to create and restore project-wide save points using a simple UI. It is not a version control system. A restore is an overlay: every file the save point captured is overwritten in place, files created since the save point are left alone, and nothing is ever deleted. User-defined exclusions are respected.
 
 ## Components
 - **Extension Activation**: Registers commands for creating and restoring save points.

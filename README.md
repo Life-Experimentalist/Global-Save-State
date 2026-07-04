@@ -1,9 +1,9 @@
-# 🎮 Global Save State
+# 🎮 Save-Sync
 ### *Save Points for Your Code - Just Like in Games!*
 
 <div align="center">
 
-![Global Save State Logo](icon.jpg)
+![Save-Sync Logo](icon.jpg)
 
 **Create checkpoints in your code projects just like save points in video games!**
 
@@ -19,7 +19,7 @@
 
 ## 🎯 Why Save Points for Code?
 
-Remember playing **Zelda** and hitting that checkpoint right before `Ganondorf`? Or **`Dark Souls`** where you desperately needed that bonfire before the boss? **`Global Save State`** brings that same peace of mind to coding!
+Remember playing **Zelda** and hitting that checkpoint right before `Ganondorf`? Or **`Dark Souls`** where you desperately needed that bonfire before the boss? **`Save-Sync`** brings that same peace of mind to coding!
 
 ### 🎮 Perfect Gaming Scenarios:
 
@@ -50,35 +50,39 @@ Remember playing **Zelda** and hitting that checkpoint right before `Ganondorf`?
 
 ### 🎮 Just Like Your Favorite Games
 
-| 🎯 **Game Feature**       | 💻 **Global Save State** | 🔥 **Why It's Awesome**       |
+| 🎯 **Game Feature**       | 💻 **Save-Sync** | 🔥 **Why It's Awesome**       |
 | ------------------------ | ----------------------- | ---------------------------- |
-| 💾 **Quick Save**         | `Ctrl+Shift+S`          | Instant checkpoint creation  |
-| 🔄 **Quick Load**         | `Ctrl+Alt+R`            | Instant project restoration  |
+| 💾 **Quick Save**         | `Ctrl+Shift+S`          | One keystroke, one snapshot  |
+| 🔄 **Quick Load**         | `Ctrl+Alt+R`            | Pick a save point, it writes |
 | 📍 **Named Saves**        | "Before AI Integration" | Descriptive checkpoint names |
-| 🎯 **Save Slots**         | Up to 50 per project    | Multiple restore points      |
-| ⚡ **No Loading Screens** | Instant restore         | Zero wait time               |
+| 🎯 **Save Slots**         | 50 by default           | Oldest is dropped past that  |
+| 📜 **Overwrite on Load**  | Saved files rewritten   | Files added since stay put   |
 | 🎪 **Multiple Campaigns** | Multi-root workspaces   | Independent save systems     |
 
 ### 🚀 Core Features
 
-- **💾 Create Named Save Points**: Capture your entire project state with custom names
-- **🔄 Instant Restore**: Quickly restore to any previous save point
+- **💾 Create Named Save Points**: Capture the text of every non-excluded file under a custom name
+- **🔄 Restore Over Your Files**: Rewrite the files a save point captured back into the folder
 - **📁 Multi-Root Support**: Each workspace folder maintains its own save points independently
 - **⚙️ Flexible Exclusions**: Configure exclusion patterns per folder via `.vscode/settings.json`
-- **⚡ Smart Detection**: Automatically handles empty save points when no changes are detected
+- **⚡ Duplicate Detection**: A save point identical to the one before it is stored empty, and restoring it does nothing
 - **🎯 Not a VCS**: Lightweight alternative to version control for quick state management
 
 ## 📦 Installation
 
 ### 🎮 From VS Code Marketplace (Recommended)
-1. Open VS Code
-2. Go to Extensions (`Ctrl+Shift+X`)
-3. Search for "**Global Save State**"
-4. Click **Install**
-5. Start creating save points! 🎉
+
+The Marketplace listing is still titled **Global Save State** — the rename to Save-Sync
+lands on the next publish — so install it by id rather than by searching:
+
+```bash
+code --install-extension VKrishna04.global-save-state
+```
+
+Or open the [Marketplace page](https://marketplace.visualstudio.com/items?itemName=VKrishna04.global-save-state) and click **Install**.
 
 ### 📁 From VSIX File
-1. Download the `.vsix` file from [releases](https://github.com/Life-Experimentalist/global-save-state/releases)
+1. Download the `.vsix` file from [releases](https://github.com/Life-Experimentalist/Save-Sync/releases)
 2. Open VS Code
 3. Run `Extensions: Install from VSIX...` from Command Palette
 4. Select the downloaded `.vsix` file
@@ -122,7 +126,7 @@ function experimentalFeature() {
 ## 🎯 Advanced Usage
 ### 💾 Creating Save Points (Quick Save)
 - **🎮 Keyboard**: `Ctrl+Shift+S` (or `Cmd+Shift+S` on Mac)
-- **📝 Command Palette**: `Global Save State: Create Save Point`
+- **📝 Command Palette**: `Save-Sync: Create Save Point`
 
 **Multi-Workspace Projects:**
 1. If multiple workspace folders are open, select which folder to save
@@ -131,14 +135,59 @@ function experimentalFeature() {
 
 ### 🔄 Loading Save Points (Quick Load)
 - **🎮 Keyboard**: `Ctrl+Alt+R` (or `Cmd+Alt+R` on Mac)
-- **📝 Command Palette**: `Global Save State: Restore Save Point`
+- **📝 Command Palette**: `Save-Sync: Restore Save Point`
 
 **Restore Process:**
 1. If multiple workspace folders are open, select which folder to restore
 2. Choose from your list of save points (sorted by newest first)
-3. Your project is instantly restored to that exact state
+3. Every file the save point captured is written back over whatever is there now
 
-> ⚠️ **Boss Fight Warning**: Just like in games, loading a save point will overwrite your current progress! Save first if you want to keep changes.
+> ⚠️ **Boss Fight Warning**: Loading a save point overwrites your current work with no
+> confirmation prompt and no backup. Create a save point first if you want to keep it.
+> Read the "What a Restore Actually Does" section below before you rely on this.
+
+## ⚠️ What a Restore Actually Does
+
+A restore is an **overlay, not a rollback**. Read this before you trust it with work you
+cannot lose. Every point below is the behaviour of the current code, not an aspiration.
+
+**What is captured.** When you create a save point the extension walks every file the
+`**/*` glob matches in the chosen workspace folder, minus your exclusion patterns, decodes
+each one as UTF-8 text and stores the string. Binary files (images, fonts, `.vsix`, `.pdf`)
+go through the same text decode and come back corrupted — exclude them.
+
+**Where it is stored.** A plain JSON file on disk at `.vscode/globalSaveState.json` inside
+each workspace folder, holding an array of `{ name, timestamp, files }`. Nothing is kept in
+VS Code’s workspace or global storage, so the save points travel with the folder and are
+readable and editable by hand.
+
+**Your ignore files are edited.** The first time you create a save point in a folder, the
+extension appends `.vscode/globalSaveState.json` to that folder’s `.gitignore` and
+`.vscodeignore`, **creating either file if it does not exist**.
+
+**What a restore writes.** For every file recorded in the save point, the parent directory
+is created if missing and the file is overwritten with the stored text. That is the whole
+operation. Specifically:
+
+- **Nothing is ever deleted.** A file you created after the save point is still there
+  afterwards. To get back to a genuinely clean state you have to delete those yourself.
+- **A file you deleted since the save point is recreated.**
+- **There is no conflict detection.** Unsaved editor buffers, newer edits, generated output —
+  if the path was in the save point, it is overwritten. No diff, no prompt, no merge.
+- **There is no backup.** The overwritten content is gone unless it is in another save point
+  or in git.
+- **Write failures are silent.** If a file cannot be written (locked, read-only, permissions)
+  the restore skips it and still reports success, so a restore can be partial without saying so.
+
+**Save points are evicted silently.** Once the count passes `globalSaveState.maxSavePoints`
+(default 50), the oldest are dropped without warning as new ones are created.
+
+**Identical snapshots are stored empty.** If nothing changed since the previous save point,
+the new one records no files; restoring it warns that it is empty and writes nothing.
+
+**Exclusion patterns are read as strict JSON.** The per-folder `.vscode/settings.json` is
+parsed with `JSON.parse`, so the `//` comments VS Code normally allows in that file will make
+the parse fail — silently falling back to your global `globalSaveState.excludePatterns`.
 
 ## ⚙️ Configuration
 
@@ -172,7 +221,7 @@ Create `.vscode/settings.json` in any workspace folder:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Life-Experimentalist/global-save-state
+git clone https://github.com/Life-Experimentalist/Save-Sync
 
 # Install dependencies
 npm install
@@ -192,7 +241,7 @@ npm run build
 - [Architecture](docs/ARCHITECTURE.md): System design and diagrams
 - [Roadmap](docs/ROADMAP.md): Milestones and future plans
 - [TODO](docs/TODO.md): Tasks and bugs
-- [Changelog](docs/CHANGELOG.md): Release notes
+- [Changelog](CHANGELOG.md): Release notes
 - [License](LICENSE.md): License information
 - [Code of Conduct](docs/CODE_OF_CONDUCT.md): Community guidelines
 
@@ -209,8 +258,8 @@ Licensed under the [Apache 2.0 License](LICENSE.md).
 
 ## 🐛 Issues & Support
 
-- Report bugs: [GitHub Issues](https://github.com/Life-Experimentalist/global-save-state/issues)
-- Feature requests: [GitHub Issues](https://github.com/Life-Experimentalist/global-save-state/issues)
+- Report bugs: [GitHub Issues](https://github.com/Life-Experimentalist/Save-Sync/issues)
+- Feature requests: [GitHub Issues](https://github.com/Life-Experimentalist/Save-Sync/issues)
 - Email: krishnagsvv@gmail.com
 
 ---
@@ -221,6 +270,6 @@ Licensed under the [Apache 2.0 License](LICENSE.md).
 
 *Made with ❤️ for developers who miss game checkpoints in their code*
 
-[🌟 Star on GitHub](https://github.com/Life-Experimentalist/global-save-state) | [📦 VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Life-Experimentalist.global-save-state)
+[🌟 Star on GitHub](https://github.com/Life-Experimentalist/Save-Sync) | [📦 VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=VKrishna04.global-save-state)
 
 </div>
