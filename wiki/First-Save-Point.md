@@ -114,7 +114,7 @@ Think like you're playing an RPG:
 ## 🔧 Customizing Your First Save
 
 ### **Exclude Additional Files**
-Go to VS Code Settings → Search "Save-Sync":
+Go to VS Code Settings → Search "globalSaveState":
 ```json
 {
     "globalSaveState.excludePatterns": [

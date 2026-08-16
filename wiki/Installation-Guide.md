@@ -7,7 +7,7 @@ Welcome to Save-Sync! Get your gaming-style save points set up in VS Code in jus
 ### **Method 1: VS Code Marketplace**
 1. **Open VS Code**
 2. **Press `Ctrl+Shift+X`** (or `Cmd+Shift+X` on Mac) to open Extensions
-3. **Search for**: `"Save-Sync"`
+3. **Search for**: `VKrishna04.global-save-state` — the listing is still titled **Global Save State**
 4. **Click Install** on the extension by **VKrishna04**
 5. **Ready to go!** 🎮
 
@@ -35,7 +35,7 @@ After installation, you should see:
 4. **Success!** You should see a confirmation message
 
 ### **3. Configure Settings (Optional)**
-Go to **File** → **Preferences** → **Settings** and search for "Save-Sync":
+Go to **File** → **Preferences** → **Settings** and search for "globalSaveState":
 
 ```json
 {
@@ -77,7 +77,7 @@ Go to **File** → **Preferences** → **Settings** and search for "Save-Sync":
 ## ❓ Installation Troubleshooting
 
 ### **Extension Not Found**
-- Check you're searching for: `"Save-Sync"` or `VKrishna04.global-save-state`
+- Search by id: `VKrishna04.global-save-state` — the listing is still titled "Global Save State", so searching "Save-Sync" finds nothing
 - Ensure you have internet connection
 - Try restarting VS Code
 

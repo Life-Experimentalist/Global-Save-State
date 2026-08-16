@@ -4,7 +4,7 @@ Create gaming-style save points in VS Code! Save your progress before trying ris
 
 ## 🚀 Quick Start
 
-1. **Install**: Search "Save-Sync" in VS Code Extensions
+1. **Install**: Search `VKrishna04.global-save-state` in VS Code Extensions (the listing is still titled "Global Save State")
 2. **Create Save**: `Ctrl+Shift+S` → Enter name → Done!
 3. **Restore Save**: `Ctrl+Alt+R` → Select save point → Restored!
 

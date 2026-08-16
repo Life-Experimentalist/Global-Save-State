@@ -6,7 +6,7 @@ Customize Save-Sync to perfectly fit your gaming-style workflow! Like any good g
 
 ### **VS Code Settings**
 1. **Open Settings**: `Ctrl+,` (or `Cmd+,` on Mac)
-2. **Search**: `"Save-Sync"`
+2. **Search**: `"globalSaveState"`
 3. **Configure**: Adjust settings to your liking
 
 ### **Settings JSON**

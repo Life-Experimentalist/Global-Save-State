@@ -7,7 +7,7 @@ Get up and running with Save-Sync in just 5 minutes! This lightning-fast tutoria
 ### **Step 1: Install (30 seconds)**
 1. Open VS Code
 2. Press `Ctrl+Shift+X` (Extensions)
-3. Search: `"Save-Sync"`
+3. Search: `VKrishna04.global-save-state`
 4. Click **Install** on VKrishna04's extension
 5. ✅ **Done!**
 
@@ -200,8 +200,8 @@ Try these progressively harder challenges:
 ## ❓ Quick Help
 
 ### **Not Working?**
-- Check Extensions view - is Save-Sync enabled?
-- Try Command Palette: `Ctrl+Shift+P` → "Save-Sync"
+- Check Extensions view - is it enabled? (listed as "Global Save State")
+- Try Command Palette: `Ctrl+Shift+P` → "Save Point"
 - See [Troubleshooting](Troubleshooting) for detailed help
 
 ### **Want More?**
