@@ -180,7 +180,10 @@ operation. Specifically:
   the restore skips it and still reports success, so a restore can be partial without saying so.
 
 **Save points are evicted silently.** Once the count passes `globalSaveState.maxSavePoints`
-(default 50), the oldest are dropped without warning as new ones are created.
+(default 50), the oldest are dropped without warning as new ones are created. Setting it
+to `0` does not mean unlimited: the new save point is appended and then the list is
+trimmed while it is longer than the limit, so `0` discards every save point including the
+one just created.
 
 **Identical snapshots are stored empty.** If nothing changed since the previous save point,
 the new one records no files; restoring it warns that it is empty and writes nothing.

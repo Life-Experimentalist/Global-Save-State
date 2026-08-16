@@ -72,9 +72,13 @@ Access raw settings: `Ctrl+Shift+P` → "Preferences: Open Settings (JSON)"
 ```
 ```json
 {
-    "globalSaveState.maxSavePoints": 0     // Unlimited (not recommended)
+    "globalSaveState.maxSavePoints": 0     // Do not use — see below
 }
 ```
+
+**`0` is not “unlimited”.** A new save point is appended first and the list is then trimmed
+while it is longer than the limit, so a limit of `0` drops every save point including the
+one just created. There is no unlimited value — choose a number you are happy to keep.
 
 ## 🎯 Project-Specific Settings
 
