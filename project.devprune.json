@@ -1,0 +1,12 @@
+{
+  "$schema": "https://devprune.vkrishna04.me/schemas/v1/devprune.schema.json",
+  "prunable": {
+    "directories": [
+      {
+        "path": "out",
+        "rebuild": "npm install && npm run compile",
+        "why": "Webpack bundle output (extension.js plus its source map), the target of both `compile` and `compile-tests`. Git tracks nothing in it and package-lock.json is gitignored, so `npm install` rather than `npm ci` is what a fresh checkout can actually run."
+      }
+    ]
+  }
+}
