@@ -4,7 +4,7 @@
 	"tagline": "Save points for code, for when git is overkill.",
 	"summary": "A checkpoint tool for projects where full version control is more ceremony than the work deserves — experiments, tutorials and quick prototypes. A VS Code extension that snapshots the text of a workspace folder and writes it back on demand, so a risky change can be walked back without a branching model.",
 	"status": "complete",
-	"icon": "SiVisualstudiocode",
+	"icon": "SiTypescript",
 	"readme": true,
 	"technologies": [
 		"TypeScript",
