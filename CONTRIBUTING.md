@@ -86,13 +86,7 @@ const command = vscode.commands.registerCommand(
 ### File Structure
 ```
 src/
-├── extension.ts          // Main extension entry point
-├── savePointManager.ts   // Core save/restore logic
-├── fileCollector.ts      // File collection utilities
-├── timeline.ts           // Timeline API integration
-└── test/                 // Test files
-    ├── suite/
-    └── *.test.ts
+└── extension.ts          // The whole extension: commands, capture, restore
 ```
 
 ## 🧪 Testing Guidelines
@@ -117,7 +111,6 @@ describe('SavePointManager', () => {
 - [ ] Restore save points successfully
 - [ ] Handle projects with exclude patterns
 - [ ] Test with large projects (1000+ files)
-- [ ] Verify Timeline integration works
 - [ ] Check keyboard shortcuts function
 - [ ] Test error handling scenarios
 

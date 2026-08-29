@@ -16,7 +16,6 @@
 		"state",
         "savepoint",
         "checkpoint",
-		"timeline",
 		"project",
         "development",
         "backup",

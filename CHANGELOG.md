@@ -38,7 +38,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Multi-root workspace support
 - User-named save points with custom descriptions
 - Empty save point handling and validation
-- Timeline integration for visual save point management
 - Keyboard shortcuts (Ctrl+Shift+S for create, Ctrl+Alt+R for restore)
 
 ---

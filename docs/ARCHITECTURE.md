@@ -25,7 +25,7 @@ graph TD
 - **Not a VCS**: Only the latest state of each file is stored per save point; no diffs or history.
 - **Exclusion Support**: Exclusion patterns are respected per workspace folder.
 - **Multi-root Support**: Each open folder is handled separately for exclusions and save/restore.
-- **Empty Save Points**: If no changes, a new save point is still created for timeline marking.
+- **Empty Save Points**: If nothing changed since the previous save point, the new one is still recorded but stores no files; restoring it warns that it is empty and writes nothing.
 - **User Naming**: Each save point is named by the user for easy identification.
 
 ## Future Considerations
