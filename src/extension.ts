@@ -1,7 +1,8 @@
 import * as vscode from "vscode";
 import * as path from "path";
 import * as fs from "fs";
-import * as glob from "glob";
+import * as fsp from "fs/promises";
+import { TextDecoder } from "util";
 
 interface SavePoint {
   name: string;
@@ -47,32 +48,34 @@ function getSavePointFile(folder: vscode.WorkspaceFolder): string {
 }
 
 // Utility to ensure globalSaveState.json is added to ignore files
-function ensureIgnoreEntries(folder: vscode.WorkspaceFolder) {
+async function ensureIgnoreEntries(folder: vscode.WorkspaceFolder) {
   const gitignorePath = path.join(folder.uri.fsPath, ".gitignore");
   const vscodeignorePath = path.join(folder.uri.fsPath, ".vscodeignore");
   const ignoreEntry = ".vscode/globalSaveState.json";
 
   // Helper function to add entry to ignore file if not present
-  function addToIgnoreFile(filePath: string) {
+  async function addToIgnoreFile(filePath: string) {
     try {
       let content = "";
-      if (fs.existsSync(filePath)) {
-        content = fs.readFileSync(filePath, "utf8");
+      try {
+        content = await fsp.readFile(filePath, "utf8");
+      } catch (err) {
+        // file may not exist - we'll create it
+        content = "";
       }
 
       // Check if entry already exists
       if (!content.includes(ignoreEntry)) {
         // Add entry with proper line ending
         const newContent = content.trim() + (content.trim() ? "\n" : "") + ignoreEntry + "\n";
-        fs.writeFileSync(filePath, newContent, "utf8");
+        await fsp.writeFile(filePath, newContent, "utf8");
       }
     } catch (e) {
       // Ignore errors - file might not be writable
     }
   }
 
-  addToIgnoreFile(gitignorePath);
-  addToIgnoreFile(vscodeignorePath);
+  await Promise.all([addToIgnoreFile(gitignorePath), addToIgnoreFile(vscodeignorePath)]);
 }
 
 function getMaxSavePoints(): number {
@@ -119,21 +122,32 @@ async function createSavePoint(context: vscode.ExtensionContext) {
     } catch {}
   }
   let filesToSave: { [filePath: string]: string } = {};
-  let allFiles: string[] = [];
-  const files = glob.sync("**/*", {
-    cwd: folder.uri.fsPath,
-    ignore: excludePatterns,
-    nodir: true,
-  });
-  allFiles.push(...files);
-  for (const relPath of files) {
-    const absPath = path.join(folder.uri.fsPath, relPath);
-    try {
-      const content = fs.readFileSync(absPath, "utf8");
-      filesToSave[relPath] = content;
-    } catch (e) {
-      // Ignore unreadable files
-    }
+  // Build an exclude glob for vscode.workspace.findFiles. Use {a,b,c} syntax to combine patterns
+  const excludeGlob = excludePatterns && excludePatterns.length ? "{" + excludePatterns.join(",") + "}" : undefined;
+  // Use VS Code workspace API to find files asynchronously
+  let uris: vscode.Uri[] = [];
+  try {
+    uris = await vscode.workspace.findFiles("**/*", excludeGlob);
+  } catch (e) {
+    uris = [];
+  }
+
+  // Limit concurrency to avoid overwhelming the extension host with many simultaneous reads
+  const CONCURRENCY = 100;
+  for (let i = 0; i < uris.length; i += CONCURRENCY) {
+    const chunk = uris.slice(i, i + CONCURRENCY);
+    const reads = chunk.map(async (uri) => {
+      // Compute relative path
+      const relPath = path.relative(folder.uri.fsPath, uri.fsPath).replace(/\\/g, "/");
+      try {
+  const data = await vscode.workspace.fs.readFile(uri);
+  const content = new TextDecoder("utf-8").decode(data);
+        filesToSave[relPath] = content;
+      } catch (e) {
+        // Ignore unreadable files
+      }
+    });
+    await Promise.all(reads);
   }
   // Check if files are identical to last save point
   const lastSave = savePoints[savePoints.length - 1];
@@ -153,18 +167,17 @@ async function createSavePoint(context: vscode.ExtensionContext) {
     savePoints.shift();
   }
   try {
-    fs.mkdirSync(path.dirname(savePointFile), { recursive: true });
-    fs.writeFileSync(
-      savePointFile,
-      JSON.stringify(savePoints, null, 2),
-      "utf8"
-    );
+    await fsp.mkdir(path.dirname(savePointFile), { recursive: true });
+    await fsp.writeFile(savePointFile, JSON.stringify(savePoints, null, 2), "utf8");
 
     // Add to ignore files if this is the first save point
     if (isFirstSavePoint) {
-      ensureIgnoreEntries(folder);
+      // fire-and-forget but await to be safe
+      await ensureIgnoreEntries(folder);
     }
-  } catch {}
+  } catch (e) {
+    // ignore write errors
+  }
   vscode.window.showInformationMessage(
     `💾 Save point: "${name}" created for folder '${folder.name}'${
       isIdentical ? " (no changes detected, empty save point)" : ""
@@ -194,10 +207,11 @@ async function restoreSavePoint(context: vscode.ExtensionContext) {
   const folder = folderPick;
   const savePointFile = getSavePointFile(folder);
   let savePoints: SavePoint[] = [];
-  if (fs.existsSync(savePointFile)) {
-    try {
-      savePoints = JSON.parse(fs.readFileSync(savePointFile, "utf8"));
-    } catch {}
+  try {
+    const raw = await fsp.readFile(savePointFile, "utf8");
+    savePoints = JSON.parse(raw);
+  } catch (e) {
+    savePoints = [];
   }
   if (savePoints.length === 0) {
     vscode.window.showWarningMessage(
@@ -223,14 +237,21 @@ async function restoreSavePoint(context: vscode.ExtensionContext) {
     );
     return;
   }
-  for (const [relPath, content] of Object.entries(savePoint.files)) {
-    const absPath = path.join(folder.uri.fsPath, relPath);
-    try {
-      fs.mkdirSync(path.dirname(absPath), { recursive: true });
-      fs.writeFileSync(absPath, content, "utf8");
-    } catch (e) {
-      // Ignore write errors
-    }
+  // Write files in chunks to limit concurrency
+  const entries = Object.entries(savePoint.files);
+  const CONCURRENCY = 100;
+  for (let i = 0; i < entries.length; i += CONCURRENCY) {
+    const chunk = entries.slice(i, i + CONCURRENCY);
+    const writes = chunk.map(async ([relPath, content]) => {
+      const absPath = path.join(folder.uri.fsPath, relPath);
+      try {
+        await fsp.mkdir(path.dirname(absPath), { recursive: true });
+        await fsp.writeFile(absPath, content, "utf8");
+      } catch (e) {
+        // Ignore write errors
+      }
+    });
+    await Promise.all(writes);
   }
   vscode.window.showInformationMessage(
     `Restored save point "${savePoint.name}" for folder '${folder.name}'.`

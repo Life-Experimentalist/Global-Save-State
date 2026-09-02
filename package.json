@@ -2,7 +2,7 @@
 	"name": "global-save-state",
 	"displayName": "Global Save State",
 	"description": "Create global save states for your project using VS Code timeline feature",
-    "version": "1.0.3",
+	"version": "1.1.0",
 	"icon": "icon.jpg",
 	"publisher": "VKrishna04",
     "license": "Apache-2.0",
@@ -51,7 +51,7 @@
             "url": "https://img.shields.io/visual-studio-marketplace/d/VKrishna04.global-save-state",
             "href": "https://marketplace.visualstudio.com/items?itemName=VKrishna04.global-save-state",
             "description": "Downloads"
-        },
+		}
     ],
 	"engines": {
 		"vscode": "^1.74.0",

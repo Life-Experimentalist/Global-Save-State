@@ -1,0 +1,27 @@
+{
+	"$schema": "https://vkrishna04.me/schemas/project-manifest.schema.json",
+	"manifestVersion": 2,
+	"tagline": "Save points for code, for when git is overkill.",
+	"summary": "A checkpoint tool for projects where full version control is more ceremony than the work deserves — experiments, tutorials and quick prototypes. It snapshots a project's state and restores it, so a risky change can be undone without a branching model.",
+	"status": "complete",
+	"icon": "SiPython",
+	"readme": true,
+	"technologies": [
+		"Python",
+		"CLI"
+	],
+	"tags": [
+		"developer-tools",
+		"backup",
+		"prototyping",
+		"cli"
+	],
+	"highlights": [
+		"Aimed at the cases git is genuinely too heavy for: tutorials, throwaway experiments and rapid prototypes.",
+		"Restores a saved checkpoint wholesale, so an experiment is abandoned by restoring rather than by reverting.",
+		"Keeps checkpoints outside the project's own history, leaving any existing repository untouched."
+	],
+	"links": {
+		"repo": "https://github.com/Life-Experimentalist/Save-Sync"
+	}
+}
